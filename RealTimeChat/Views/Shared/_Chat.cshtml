@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNet.Identity
+
+<section id="chat-wrapper">
+    <h4 id="room-header"></h4><h4 id="user-count"></h4>
+    <ul id="online-users"></ul>
+    <section id="discussion"></section>
+    @if (Request.IsAuthenticated)
+    {
+        <textarea id="message"></textarea>
+        <input type="button" id="send-message" value="Send" />
+        <input type="hidden" id="display-name" value="@User.Identity.GetUserName()"/>
+    }
+    else
+    {
+        <h2>Please log in to use chatroom</h2>
+    }
+</section>
+
+
+
